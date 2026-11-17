@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tower of Hanoi</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <header>
+    <h1>Tower of Hanoi</h1>
+    <p class="sub">Move every disk from the left peg to the right peg.</p>
+  </header>
+
+  <section class="controls">
+    <label>Disks
+      <select id="disk-select">
+        <option>1</option><option>2</option><option selected>3</option>
+        <option>4</option><option>5</option><option>6</option>
+        <option>7</option><option>8</option>
+      </select>
+    </label>
+    <div class="stats">
+      <span id="moves">Moves: 0</span>
+      <span id="min">Minimum: 7</span>
+    </div>
+    <div class="buttons">
+      <button id="reset-btn" type="button">Reset</button>
+      <button id="hint-btn" type="button">Hint</button>
+      <button id="demo-btn" type="button">Watch demo</button>
+      <button id="how-btn" type="button" class="primary">How to play</button>
+    </div>
+  </section>
+
+  <div class="board" id="board">
+    <div class="rod" data-peg="left"></div>
+    <div class="rod" data-peg="middle"></div>
+    <div class="rod" data-peg="right"></div>
+    <div class="base"></div>
+    <div class="win" id="win" hidden>
+      <h2>You won!</h2>
+      <p id="win-text"></p>
+      <button id="again-btn" type="button" class="primary">Play again</button>
+    </div>
+  </div>
+  <div class="labels"><span>Left</span><span>Middle</span><span>Right</span></div>
+
+  <p id="message" aria-live="polite">Click a peg to pick up its top disk, then click another peg. You can also drag a disk.</p>
+  <p id="server-status" class="status">Checking the Prolog server...</p>
+</main>
+
+<dialog id="how">
+  <h2>How to play</h2>
+
+  <h3>Goal</h3>
+  <p>Move the whole stack of disks from the left peg to the right peg.</p>
+
+  <h3>Rules</h3>
+  <ul>
+    <li>Move only one disk at a time.</li>
+    <li>You can only move the top disk of a peg.</li>
+    <li>Never put a larger disk on top of a smaller disk.</li>
+  </ul>
+
+  <h3>Minimum number of moves</h3>
+  <p>With <em>n</em> disks the fewest possible moves is <strong>2<sup>n</sup> &minus; 1</strong>.
+     For example: 3 disks need 7 moves, 4 need 15, 5 need 31, and 8 need 255.</p>
+
+  <h3>Tips</h3>
+  <ul>
+    <li>Start with 3 disks to learn the pattern.</li>
+    <li>To move a tower of <em>n</em> disks: move the top <em>n &minus; 1</em> disks to the spare peg, move the biggest disk, then move the <em>n &minus; 1</em> disks on top of it.</li>
+    <li>The smallest disk moves every second move, always in the same direction.
+        With an odd number of disks it goes left, right, middle, left, ...
+        With an even number it goes left, middle, right, left, ...</li>
+    <li>Stuck? Press <strong>Hint</strong> to see the next best move.</li>
+  </ul>
+
+  <div class="dialog-buttons">
+    <button id="try-demo-btn" type="button">Watch a 3-disk demo</button>
+    <button id="close-how-btn" type="button" class="primary">Start playing</button>
+  </div>
+</dialog>
+
+<script src="app.js"></script>
+</body>
+</html>
