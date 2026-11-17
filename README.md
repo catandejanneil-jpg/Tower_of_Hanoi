@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Tower-of-Hanoi
 
 TOWER OF HANOI!
@@ -20,3 +21,7 @@ Then open http://localhost:8000
 
 ## API
 `GET /solve?disks=N` (N from 1 to 8) returns the moves as JSON.
+=======
+# Tower_of_Hanoi
+tower of hanoi
+>>>>>>> b07ff18bbaa2ca40a083a35b18caf9a2409819b2
