@@ -1,11 +1,5 @@
-<<<<<<< HEAD
-# Tower-of-Hanoi
 
-TOWER OF HANOI!
-
-🌐 **Live Demo:** [Play here]( https://render.com/docs/web-services#port-binding)
-
-Built with SWI-Prolog (backend) and vanilla JavaScript (frontend), deployed on Render.
+Built with SWI-Prolog (backend) and vanilla JavaScript (frontend)
 
 ## Features
 - Auto-solve mode: the moves come from a recursive Prolog predicate (`hanoi/4`)
